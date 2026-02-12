@@ -1,0 +1,24 @@
+[project]
+name = "project-mmm"
+version = "0.1.0"
+description = "A Production-Grade Marketing Mix Modeling (MMM) Analytics Pipeline using PyMC-Marketing."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "pymc>=5.0.0",
+    "pymc-marketing>=0.3.0",
+    "arviz>=0.15.0",
+    "scikit-learn>=1.2.0",
+    "pyarrow>=12.0.0",  # For parquet/feather support (Medallion architecture)
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
