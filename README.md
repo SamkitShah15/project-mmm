@@ -83,10 +83,55 @@ pip install .
 ```
 
 ### Usage
-1.  **Generate Data**: `python src/data_engineering/generate_synthetic_data.py`
-2.  **Run Pipeline**: (Coming Soon)
+
+### Usage
+Follow the pipeline to replicate the analysis:
+
+1.  **Generate Data**:
+    ```bash
+    python src/data_engineering/generate_synthetic_data.py
+    ```
+    *Creates `data/bronze/beauty_brand_mmm.csv`*
+
+2.  **Process Data (Medallion Architecture)**:
+    ```bash
+    python src/data_engineering/process_silver.py
+    python src/data_engineering/process_gold.py
+    ```
+    *Enginners features (Adstock/Saturation) -> `data/gold/`*
+
+3.  **Train Bayesian Model (ADVI)**:
+    ```bash
+    python src/modeling/train_model.py
+    ```
+    *Trains the initial probabilistic model using Variational Inference.*
+
+4.  **Run Geo-Experiment (Calibration)**:
+    ```bash
+    python src/modeling/simulate_geo_experiment.py
+    python src/modeling/calibrate_model.py
+    ```
+    *Simulates a Melbourne lift test and retrains the model with the new "Ground Truth" prior.*
+
+5.  **Optimize Budget**:
+    ```bash
+    python src/modeling/budget_optimizer.py
+    ```
+    *Outputs the optimal media mix recommendations.*
+
+## 📈 Key Results
+**Optimization Opportunity:** Found **$83,713 (+4.8%)** in daily revenue lift by reallocating budget.
+
+| Channel | Action | Rationale (Data-Driven) |
+| :--- | :--- | :--- |
+| **TikTok** | 🔻 **Cut 50%** | Geo-Experiment revealed ROAS (3.5) was lower than Modeled (5.2). |
+| **Google** | 🟢 **Boost 50%** | capturing high-intent demand; S-Curve analysis shows room to scale. |
+| **FB** | 🟢 **Boost 39%** | Strong visual driver with efficient CPA. |
 
 ## 📂 Project Structure
 - `data/`: Medallion architecture storage.
-- `src/`: Source code for engineering and modeling.
-- `notebooks/`: Exploratory analysis and storytelling.
+- `src/`: Source code.
+    - `data_engineering`: ETL and Feature Engineering.
+    - `modeling`: PyMC models, Simulation, and Optimization logic.
+- `reports/`: Executive summaries and debugging logs.
+- `notebooks/`: Exploratory analysis.

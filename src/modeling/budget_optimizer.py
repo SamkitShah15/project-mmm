@@ -77,7 +77,7 @@ def budget_optimizer(model_path, data_path, total_budget=None):
             # Revenue
             revenue = saturation * coefs[col]
             total_revenue += revenue
-        return -total_revenue # Minimize negative revenue
+        return -total_revenue * 100000 # Scale up for gradient sensitivity
     
     # Constraints
     # 1. Sum of spend <= Total Budget
@@ -118,6 +118,12 @@ def budget_optimizer(model_path, data_path, total_budget=None):
     print(f"Projected Revenue Lift: {(-result.fun - -objective_function(x0)):,.2f}")
 
 if __name__ == "__main__":
+    import sys
+    # Redirect output to a log file for debugging
+    log_file = open("optimization_log.txt", "w", encoding="utf-8")
+    sys.stdout = log_file
+    sys.stderr = log_file
+    
     models_dir = os.path.join("data", "models")
     model_path = os.path.join(models_dir, "calibrated_summary.csv")
     gold_path = os.path.join("data", "gold", "beauty_brand_mmm_features.parquet")
@@ -126,3 +132,5 @@ if __name__ == "__main__":
         budget_optimizer(model_path, gold_path)
     else:
         print("Model summary not found. Run calibrate_model.py first.")
+        
+    log_file.close()

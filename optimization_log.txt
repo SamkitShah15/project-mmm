@@ -1,0 +1,24 @@
+Loading calibrated model and data...
+Optimization Parameters (Coefficients):
+{'spend_facebook': np.float64(10.101), 'spend_google_search': np.float64(10.825), 'spend_tiktok': np.float64(3.495), 'spend_tv': np.float64(10.638)}
+
+Total Budget to Optimize: $9,755.82 (Daily Avg)
+Initial Revenue (x0): 1,755,352.70
+Running SQP Optimization...
+Optimization terminated successfully    (Exit mode 0)
+            Current function value: -1839066.191386656
+            Iterations: 11
+            Function evaluations: 55
+            Gradient evaluations: 11
+Optimization Status: Optimization terminated successfully
+Optimization Success: True
+
+--- Optimized Budget Allocation ---
+Channel              | Old Spend    | New Spend    | Delta   
+------------------------------------------------------------
+spend_facebook       | $2,184.17   | $3,031.21   | +38.8%
+spend_google_search  | $1,636.58   | $2,454.87   | +50.0%
+spend_tiktok         | $2,030.97   | $1,015.48   | -50.0%
+spend_tv             | $3,904.11   | $3,254.26   | -16.6%
+------------------------------------------------------------
+Projected Revenue Lift: 83,713.50
