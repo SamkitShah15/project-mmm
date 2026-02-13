@@ -1,0 +1,6 @@
+,mean,sd,hdi_3%,hdi_97%,mcse_mean,mcse_sd,ess_bulk,ess_tail,r_hat
+intercept,12.014,9.977,1.461,28.836,0.312,0.753,986.0,748.0,
+spend_facebook_saturated,11.95,9.856,1.53,26.831,0.327,1.066,882.0,901.0,
+spend_google_search_saturated,11.273,8.836,1.716,25.626,0.297,0.499,892.0,954.0,
+spend_tiktok_saturated,12.4,10.839,1.309,28.947,0.343,1.11,1023.0,885.0,
+spend_tv_saturated,17422.611,0.876,17421.086,17424.228,0.028,0.023,974.0,880.0,

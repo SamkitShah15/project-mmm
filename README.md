@@ -27,24 +27,24 @@ We don't just run a regression; we build a **Production-Grade Pipeline** mirrori
 ```mermaid
 graph TD
     subgraph Ingestion
-    A[Raw Data Sources<br/>(FB, Google, Shopify)] -->|Ingest| B[(Bronze Layer<br/>Raw CSVs)]
+    A["Raw Data Sources<br/>(FB, Google, Shopify)"] -->|Ingest| B[("Bronze Layer<br/>Raw CSVs")]
     end
 
     subgraph "Data Engineering (Spark/Pandas)"
-    B -->|Clean & Validate| C[(Silver Layer<br/>Cleaned Data)]
-    C -->|Feature Eng<br/>Adstock & Saturation| D[(Gold Layer<br/>Modeling Ready)]
+    B -->|Clean & Validate| C[("Silver Layer<br/>Cleaned Data")]
+    C -->|Feature Eng<br/>Adstock & Saturation| D[("Gold Layer<br/>Modeling Ready")]
     end
 
     subgraph "Modeling (PyMC-Marketing)"
-    D --> E[Bayesian MMM Model]
-    F[Industry Priors] --> E
-    G[Geo-Lift Experiment<br/>(Calibration)] -->|Informative Prior| E
+    D --> E["Bayesian MMM Model"]
+    F["Industry Priors"] --> E
+    G["Geo-Lift Experiment<br/>(Calibration)"] -->|Informative Prior| E
     end
 
     subgraph "Decisioning"
-    E --> H[Posterior Distributions]
-    H --> I[Budget Optimizer]
-    I --> J[ROI Insights]
+    E --> H["Posterior Distributions"]
+    H --> I["Budget Optimizer"]
+    I --> J["ROI Insights"]
     end
 ```
 
