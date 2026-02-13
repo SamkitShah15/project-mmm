@@ -1,0 +1,6 @@
+{
+    "channel": "spend_tiktok",
+    "experiment_roas": 3.5,
+    "std_error": 0.2,
+    "description": "Geo-Lift in Melbourne verifying TikTok efficiency."
+}
