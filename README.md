@@ -2,8 +2,8 @@
 
 > **Objective:** To establish a production-grade analytics pipeline that quantifying marketing impact using Bayesian inference and Causal Calibration.
 
-## � About the Author
-**Samkit Shah** | *Master of Data Science Candidate (Monash) & Marketing Technologist*
+## About the Author
+**Samkit Shah** | *Master of Data Science Graduate (Monash University) & Marketing Technology Professional*
 
 > *"Bridging the gap between Media Strategy and Bayesian Statistics."*
 
@@ -11,7 +11,7 @@ With 3 years of experience at **Publicis Global Delivery** managing large-scale 
 
 ---
 
-## 🛑 The Problem: The "Attribution Crisis"
+## The Problem: The "Attribution Crisis"
 Digital marketing measurement is broken.
 -   **Privacy Changes:** iOS 14+ and cookie deprecation have rendered deterministic tracking (MTA) unreliable.
 -   **Walled Gardens:** Facebook and Google grade their own homework, often over-claiming credit.
@@ -21,7 +21,7 @@ Digital marketing measurement is broken.
 
 ---
 
-## 🏗️ System Architecture: The "Unified" Approach
+## System Architecture: The "Unified" Approach
 We don't just run a regression; we build a **Production-Grade Pipeline** mirroring a modern Lakehouse architecture.
 
 ```mermaid
@@ -50,7 +50,7 @@ graph TD
 
 ---
 
-## 🧪 Bayesian Technical Appendix: Why PyMC?
+## Bayesian Technical Appendix: Why PyMC?
 Why use Bayesian Inference instead of standard Machine Learning (Regression/Gradient Boosting)?
 
 1.  **Prior Knowledge**: We can mathematically encode industry expertise (e.g., *"TV effects last longer than Social effects"*) using **Priors**.
@@ -61,7 +61,7 @@ Why use Bayesian Inference instead of standard Machine Learning (Regression/Grad
 
 ---
 
-## � Executive Summary
+## Executive Summary
 This project answers the critical question: *"Where should the next $1M be spent?"*
 
 **Key Capabilities:**
@@ -71,7 +71,7 @@ This project answers the critical question: *"Where should the next $1M be spent
 
 ---
 
-## �🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Python 3.10+
@@ -81,8 +81,6 @@ This project answers the critical question: *"Where should the next $1M be spent
 ```bash
 pip install .
 ```
-
-### Usage
 
 ### Usage
 Follow the pipeline to replicate the analysis:
@@ -119,16 +117,16 @@ Follow the pipeline to replicate the analysis:
     ```
     *Outputs the optimal media mix recommendations.*
 
-## 📈 Key Results
+## Key Results
 **Optimization Opportunity:** Found **$83,713 (+4.8%)** in daily revenue lift by reallocating budget.
 
 | Channel | Action | Rationale (Data-Driven) |
 | :--- | :--- | :--- |
-| **TikTok** | 🔻 **Cut 50%** | Geo-Experiment revealed ROAS (3.5) was lower than Modeled (5.2). |
-| **Google** | 🟢 **Boost 50%** | capturing high-intent demand; S-Curve analysis shows room to scale. |
-| **FB** | 🟢 **Boost 39%** | Strong visual driver with efficient CPA. |
+| **TikTok** | **Cut 50%** | Geo-Experiment revealed ROAS (3.5) was lower than Modeled (5.2). |
+| **Google** | **Boost 50%** | capturing high-intent demand; S-Curve analysis shows room to scale. |
+| **FB** | **Boost 39%** | Strong visual driver with efficient CPA. |
 
-## 📂 Project Structure
+## Project Structure
 - `data/`: Medallion architecture storage.
 - `src/`: Source code.
     - `data_engineering`: ETL and Feature Engineering.
